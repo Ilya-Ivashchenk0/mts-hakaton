@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
 import { montserrat, openSans } from '@/shared/fonts/fonts'
 import '@/shared/styles/globals.css'
-import { Header } from '@/widgets/header'
 
 export const metadata: Metadata = {
   title: 'Hotel Booking',
@@ -18,7 +17,6 @@ const RootLayout = ({
       <body
         className={`${montserrat.variable} ${openSans.variable} antialiased`}
       >
-        <Header />
         {children}
       </body>
     </html>
