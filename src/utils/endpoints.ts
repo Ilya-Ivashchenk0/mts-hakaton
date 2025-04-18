@@ -1,6 +1,6 @@
 const baseHeaders = {
   'Content-Type': 'application/json',
-  'Authorization': `Bearer ${process.env.MTS_TABS_TOKEN}`
+  Authorization: `Bearer ${process.env.MTS_TABS_TOKEN}`
 }
 
 export const endpoints = {

@@ -1,7 +1,11 @@
-import { BookingPage } from "@/pages/booking-page"
+import { BookingPage } from '@/pages/booking-page'
 
 const Booking = () => {
-  return <BookingPage />
+  return (
+    <main>
+      <BookingPage />
+    </main>
+  )
 }
 
 export default Booking

@@ -1,7 +1,11 @@
-import { RoomsPage } from "@/pages/rooms-page"
+import { RoomsPage } from '@/pages/rooms-page'
 
 const Rooms = () => {
-  return <RoomsPage />
+  return (
+    <main>
+      <RoomsPage />
+    </main>
+  )
 }
 
 export default Rooms
