@@ -1,8 +1,9 @@
+import { BookingForm } from '@/src/features/booking-form'
 import { RoomCard } from '@/src/shared/ui/room-card'
 
 export const BookingPage = () => {
   return (
-    <main className="w-full pt-14 px-30">
+    <main className="flex w-full flex-col gap-14 px-30 pt-14">
       <RoomCard
         room={{
           recordId: 'ssss',
@@ -18,6 +19,7 @@ export const BookingPage = () => {
         }}
         mode="horizontal"
       />
+      <BookingForm />
     </main>
   )
 }

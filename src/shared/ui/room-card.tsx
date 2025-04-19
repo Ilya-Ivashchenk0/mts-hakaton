@@ -42,7 +42,7 @@ const roomCardVariants = cva('', {
   variants: {
     mode: {
       vertical: 'flex flex-col',
-      horizontal: 'flex-row gap-5 bg-transparent border-none shadow-none'
+      horizontal: 'flex-row gap-5 border-none bg-transparent shadow-none'
     }
   },
   defaultVariants: {
@@ -72,7 +72,7 @@ const footerVariants = cva('flex flex-col justify-between', {
   variants: {
     mode: {
       vertical: '',
-      horizontal: 'gap-5 items-start'
+      horizontal: 'items-start gap-5'
     }
   }
 })
@@ -107,16 +107,18 @@ export const RoomCard = ({
             </CardDescription>
           </div>
 
-          <div className={cn('flex justify-between', { 'pb-5': mode === 'vertical' })}>
+          <div
+            className={cn('flex justify-between', {
+              'pb-5': mode === 'vertical'
+            })}
+          >
             <CardAction>{room.fields['Стоимость']} ₽</CardAction>
             {mode === 'horizontal' && <ComfortIcons />}
           </div>
           {mode === 'horizontal' && (
-          <p className='pb-3'>улица Рубинштейна, д.7/2, Санкт-Петербург</p>
-        )}
+            <p className="pb-3">улица Рубинштейна, д.7/2, Санкт-Петербург</p>
+          )}
         </CardContent>
-
-
 
         <CardFooter className={footerVariants({ mode })}>
           <Separator />

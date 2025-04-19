@@ -29,7 +29,7 @@ const RootLayout = async ({
     return (
       <html lang="ru">
         <body
-          className={`${montserrat.variable} ${openSans.variable} pt-6 antialiased`}
+          className={`${montserrat.variable} ${openSans.variable} antialiased`}
         >
           <Header dict={headerDict.data} />
           {children}

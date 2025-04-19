@@ -22,7 +22,7 @@ const MainLayout = async ({
     const mainLayoutDict = await mainLayoutData.json()
 
     return (
-      <main className="mt-3 flex min-h-[calc(100vh-12px)] flex-col">
+      <main className="flex min-h-[calc(100vh-68px)] flex-col">
         <div className="relative grid max-h-[900px] w-full grid-cols-11 grid-rows-11 flex-wrap gap-4 px-10 pt-14">
           <div className="z-20 col-start-2 col-end-8 row-start-3 row-end-5 flex flex-col items-start gap-4 text-white">
             <div className="relative min-h-10 w-16">

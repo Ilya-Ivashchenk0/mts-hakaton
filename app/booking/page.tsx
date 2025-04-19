@@ -1,7 +1,5 @@
 import { BookingPage } from '@/pages/booking-page'
 
-const Booking = () => {
-  return <BookingPage />
-}
+const Booking = () => <BookingPage />
 
 export default Booking

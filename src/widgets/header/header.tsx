@@ -10,7 +10,7 @@ import { usePathname } from 'next/navigation'
 export const Header: FC<HeaderProps> = ({ dict }) => {
   const pathname = usePathname()
   return (
-    <header className="flex w-full items-center justify-center">
+    <header className="flex w-full items-center justify-center pt-3">
       <div className="relative flex items-center gap-14 rounded-full bg-accent-foreground py-4 pr-14 pl-24">
         <Link className="absolute left-2 h-10 w-10" href="/">
           <Image
