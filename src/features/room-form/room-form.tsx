@@ -52,9 +52,7 @@ export const RoomForm = () => {
           <Input defaultValue={1} />
         </div>
         <div className="flex h-full items-center justify-center">
-          <Button type="submit" className="rounded-3xl">
-            Найти
-          </Button>
+          <Button type="submit">Найти</Button>
         </div>
       </form>
     </div>

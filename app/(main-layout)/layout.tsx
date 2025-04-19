@@ -25,7 +25,7 @@ const MainLayout = async ({
       <main className="mt-3 flex min-h-[calc(100vh-12px)] flex-col">
         <div className="relative grid max-h-[900px] w-full grid-cols-11 grid-rows-11 flex-wrap gap-4 px-10 pt-14">
           <div className="z-20 col-start-2 col-end-8 row-start-3 row-end-5 flex flex-col items-start gap-4 text-white">
-            <div className='w-16 min-h-10 relative'>
+            <div className="relative min-h-10 w-16">
               <Image
                 src={logo_full.src}
                 alt="logo"
@@ -47,9 +47,9 @@ const MainLayout = async ({
               src={img_1}
               alt="img_1"
               fill
-              className="object-cover rounded-lg"
+              className="rounded-lg object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
-              placeholder='blur'
+              placeholder="blur"
             />
           </div>
           <div className="relative z-10 col-start-4 col-end-10 row-start-3 row-end-10">
@@ -57,9 +57,9 @@ const MainLayout = async ({
               src={img_2}
               alt="img_2"
               fill
-              className="object-cover rounded-lg"
+              className="rounded-lg object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
-              placeholder='blur'
+              placeholder="blur"
             />
           </div>
           <div className="relative z-20 col-start-8 col-end-13 row-start-2 row-end-11">
@@ -67,9 +67,9 @@ const MainLayout = async ({
               src={img_3}
               alt="img_3"
               fill
-              className="object-cover rounded-lg"
+              className="rounded-lg object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
-              placeholder='blur'
+              placeholder="blur"
             />
           </div>
         </div>

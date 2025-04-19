@@ -10,7 +10,7 @@ export const RoomsPage: FC<RoomsPageProps> = ({ rooms }) => {
   )
 
   return (
-    <div className="">
+    <div className="px-20">
       <RoomsGrid rooms={filteredRooms} />
     </div>
   )
