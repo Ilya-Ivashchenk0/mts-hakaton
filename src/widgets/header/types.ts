@@ -6,9 +6,9 @@ export interface HeaderProps {
       createdAt: Date
       updatedAt: Date
       fields: {
-        Element: string
-        Text: string
-        Url: string
+        element: string
+        text: string
+        url: string
       }
     }[]
   }

@@ -17,7 +17,7 @@ const MainLayout = async ({
     const headerDict = await res.json()
 
     return (
-      <main className='pt-3'>
+      <main className="mt-3 flex min-h-[calc(100vh-12px)] flex-col">
         <Header dict={headerDict.data} />
         {children}
       </main>
