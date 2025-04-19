@@ -1,3 +1,6 @@
-export const RoomCard = () => {
-  return <div>RoomCard</div>
+import { Room } from '@/src'
+import { Card } from './card'
+
+export const RoomCard = ({ room }: { room: Room }) => {
+  return <Card></Card>
 }

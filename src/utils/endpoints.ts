@@ -4,16 +4,18 @@ const baseHeaders = {
 
 export const endpoints = {
   cms: {
-    pages: {
-      home: () => ({
+    layouts: {
+      mainLayout: () => ({
         url: `${process.env.MTS_TABS_BASE_URL}/fusion/v1/datasheets/dstkjeGa6o5leXtX0V/records?viewId=viw1WrNqtj0eD&fieldKey=name`,
         options: {
           method: 'GET',
           headers: baseHeaders
         }
-      }),
+      })
+    },
+    pages: {
       rooms: () => ({
-        url: `${process.env.MTS_TABS_BASE_URL}/`,
+        url: `${process.env.MTS_TABS_BASE_URL}/fusion/v1/datasheets/dst8K6blcFxhDBFbyR/records?viewId=viw03fKkgPvV1&fieldKey=name`,
         options: {
           method: 'GET',
           headers: baseHeaders

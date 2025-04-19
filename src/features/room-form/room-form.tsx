@@ -24,8 +24,11 @@ export const RoomForm = () => {
 
   return (
     <div className="z-40 col-start-2 col-end-11 row-start-6 row-end-8 w-full rounded-lg bg-white/70 px-4 pt-5">
-      <form action="" className="relative flex justify-between h-full text-[#040404]">
-        <div className='flex flex-col gap-2'>
+      <form
+        action=""
+        className="relative flex flex-wrap items-end justify-between text-[#040404]"
+      >
+        <div className="flex flex-col gap-2">
           <span>Адрес</span>
           <Select value={selectedAddress} onValueChange={setSelectedAddress}>
             <SelectTrigger className="min-w-[280px] bg-white">
@@ -40,15 +43,15 @@ export const RoomForm = () => {
             </SelectContent>
           </Select>
         </div>
-        <div className='flex flex-col gap-2'>
+        <div className="flex flex-col gap-2">
           <span>Период проживания</span>
           <DatePicker />
         </div>
-        <div className='flex flex-col gap-2'>
+        <div className="flex flex-col gap-2">
           <span>Количество человек</span>
           <Input defaultValue={1} />
         </div>
-        <div className='flex justify-center items-center'>
+        <div className="flex h-full items-center justify-center">
           <Button type="submit" className="rounded-3xl">
             Найти
           </Button>

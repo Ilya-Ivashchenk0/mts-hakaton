@@ -13,7 +13,7 @@ export const Header: FC<HeaderProps> = ({ dict }) => {
     <header className="flex w-full items-center justify-center">
       <div className="relative flex items-center gap-14 rounded-full bg-accent-foreground py-4 pr-14 pl-24">
         <Link className="absolute left-2 h-10 w-10" href="/">
-          <Image src={logo.src} alt="logo" priority width={40} height={40} />
+          <Image src={logo.src} alt="logo" className='object-cover' fill priority />
         </Link>
         <ul className="flex gap-6">
           {dict.records &&
