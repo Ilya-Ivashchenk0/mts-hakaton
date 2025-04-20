@@ -4,16 +4,18 @@ import { endpoints } from '@/utils/endpoints'
 import { redirect } from 'next/navigation'
 import { FC } from 'react'
 
-interface Props {
-  searchParams: {
-    address?: string
-    from?: string
-    to?: string
-    guests?: string
-  }
+interface SearchParams {
+  address?: string
+  from?: string
+  to?: string
+  guests?: string
 }
 
-const Rooms: FC<Props> = async ({ searchParams }) => {
+const Rooms = async ({
+  searchParams,
+}: {
+  searchParams: SearchParams
+}) => {
   try {
     // const { address, from, to, guests } = await searchParams
 
