@@ -2,6 +2,7 @@ import { RoomsPage } from '@/pages/rooms-page'
 import { Room } from '@/src'
 import { endpoints } from '@/utils/endpoints'
 import { redirect } from 'next/navigation'
+import { FC } from 'react'
 
 interface Props {
   searchParams: {
@@ -12,9 +13,9 @@ interface Props {
   }
 }
 
-const Rooms = async ({ searchParams }: Props) => {
+const Rooms: FC<Props> = async ({ searchParams }) => {
   try {
-    const {from, to, guests, address } = searchParams
+    // const { address, from, to, guests } = await searchParams
 
     const endpoint = endpoints.cms.pages.getAllRooms()
 

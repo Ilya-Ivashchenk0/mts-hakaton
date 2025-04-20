@@ -2,16 +2,18 @@ import { BookingPage } from '@/pages/booking-page'
 import { Room } from '@/src'
 import { endpoints } from '@/src/utils/endpoints'
 import { redirect } from 'next/navigation'
+import { FC } from 'react'
 
-interface PageProps {
+interface Props {
   params: {
     id: string
   }
 }
 
-const Booking = async ({ params }: PageProps) => {
+const Booking: FC<Props> = async ({ params }) => {
   try {
-    const { id } = params
+    const { id } = await params
+    console.log(id)
     const endpoint = endpoints.cms.pages.getOneRoom(id)
     const res = await fetch(endpoint.url, endpoint.options)
     if (!res.ok) throw new Error('Failed to fetch room')
