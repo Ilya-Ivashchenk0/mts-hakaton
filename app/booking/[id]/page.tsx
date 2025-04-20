@@ -3,9 +3,15 @@ import { Room } from '@/src'
 import { endpoints } from '@/src/utils/endpoints'
 import { redirect } from 'next/navigation'
 
-const Booking = async ({ params }: { params: { id: string } }) => {
+interface PageProps {
+  params: {
+    id: string
+  }
+}
+
+const Booking = async ({ params }: PageProps) => {
   try {
-    const { id } = await params
+    const { id } = params
     const endpoint = endpoints.cms.pages.getOneRoom(id)
     const res = await fetch(endpoint.url, endpoint.options)
     if (!res.ok) throw new Error('Failed to fetch room')
