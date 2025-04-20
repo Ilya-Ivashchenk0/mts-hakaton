@@ -14,7 +14,7 @@ interface Props {
 
 const Rooms = async ({ searchParams }: Props) => {
   try {
-    const {from, to, guests, address } = await searchParams
+    // const {from, to, guests, address } = await searchParams
 
     const endpoint = endpoints.cms.pages.getAllRooms()
 
