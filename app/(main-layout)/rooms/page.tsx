@@ -3,19 +3,8 @@ import { Room } from '@/src'
 import { endpoints } from '@/utils/endpoints'
 import { redirect } from 'next/navigation'
 
-interface Props {
-  searchParams: {
-    address?: string
-    from?: string
-    to?: string
-    guests?: string
-  }
-}
-
-const Rooms = async ({ searchParams }: Props) => {
+const Rooms = async () => {
   try {
-    // const {from, to, guests, address } = await searchParams
-
     const endpoint = endpoints.cms.pages.getAllRooms()
 
     const res = await fetch(endpoint.url, endpoint.options)
