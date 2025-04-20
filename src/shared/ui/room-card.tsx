@@ -1,3 +1,5 @@
+'use client'
+
 import { Room } from '@/src'
 import {
   Card,
@@ -22,6 +24,7 @@ import Image from 'next/image'
 import { cva } from 'class-variance-authority'
 import { cn } from '@/shared/lib/utils'
 import { DatePicker } from './date-picker'
+import Link from 'next/link'
 
 const roomImages = [room_1, room_2, room_3, room_4, room_5, room_6, room_7]
 
@@ -84,17 +87,16 @@ export const RoomCard = ({
   room: Room
   mode?: 'vertical' | 'horizontal'
 }) => {
-  const randomImage = roomImages[Math.floor(Math.random() * roomImages.length)]
-
   return (
     <Card className={roomCardVariants({ mode })}>
       <CardHeader className={imageVariants({ mode })}>
         <Image
-          src={randomImage.src}
+          src={room_1.src}
           alt={`Фото комнаты ${room.fields['Класс']}`}
           fill
           className={cn(imageVariants({ mode }))}
           sizes="(max-width: 768px) 100vw, 50vw"
+          priority
         />
       </CardHeader>
 
@@ -112,7 +114,7 @@ export const RoomCard = ({
               'pb-5': mode === 'vertical'
             })}
           >
-            <CardAction>{room.fields['Стоимость']} ₽</CardAction>
+            <CardAction>{room.fields['Цена за сутки']} ₽</CardAction>
             {mode === 'horizontal' && <ComfortIcons />}
           </div>
           {mode === 'horizontal' && (
@@ -126,7 +128,9 @@ export const RoomCard = ({
           {mode === 'vertical' ? (
             <div className="flex w-full justify-between pt-2">
               <ComfortIcons />
-              <Button>Бронировать</Button>
+              <Link href={`/booking/${room.recordId}`}>
+                <Button type="button">Бронировать</Button>
+              </Link>
             </div>
           ) : (
             <>

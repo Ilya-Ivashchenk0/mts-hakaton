@@ -1,25 +1,31 @@
+'use client'
+
+import { FormValues, Room } from '@/src'
 import { BookingForm } from '@/src/features/booking-form'
 import { RoomCard } from '@/src/shared/ui/room-card'
+import { endpoints } from '@/src/utils/endpoints'
+import { useRouter } from 'next/navigation'
 
-export const BookingPage = () => {
+export const BookingPage = ({ room }: { room: Room }) => {
+  const router = useRouter()
+
+  const onSubmit = async (values: FormValues) => {
+    try {
+      const endpoint = endpoints.cms.submitOrder({ room: room, user: values })
+      const res = await fetch(endpoint.url, endpoint.options)
+
+      if (!res.ok) throw new Error('Failed to submit order')
+
+      router.push('/booking-confirmation')
+    } catch (err) {
+      console.error(err)
+    }
+  }
+
   return (
     <main className="flex w-full flex-col gap-14 px-30 pt-14">
-      <RoomCard
-        room={{
-          recordId: 'ssss',
-          fields: {
-            'Номер комнаты': 'ssssss',
-            Класс: 'ssssssss',
-            Описание: 'ssssssss',
-            'Статус бронирования': 'ssssssss',
-            'Статус уборки': 'ssssssss',
-            Стоимость: 48,
-            Клининг: ['dsdsd', 'sdsdsd']
-          }
-        }}
-        mode="horizontal"
-      />
-      <BookingForm />
+      <RoomCard room={room} mode="horizontal" />
+      <BookingForm onSubmit={onSubmit} />
     </main>
   )
 }

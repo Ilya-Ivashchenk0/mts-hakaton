@@ -22,15 +22,7 @@ import {
 import { Checkbox } from '@/shared/ui/checkbox'
 import { Button } from '@/shared/ui/button'
 import { useRouter } from 'next/navigation'
-
-type FormValues = {
-  fullName: string
-  email: string
-  phone: string
-  country: string
-  hasPets: boolean
-  hasChildren: boolean
-}
+import { FormValues } from '@/src'
 
 const formSchema = z.object({
   fullName: z.string().min(2, {
@@ -47,7 +39,11 @@ const formSchema = z.object({
   hasChildren: z.boolean()
 }) satisfies z.ZodType<FormValues>
 
-export const BookingForm = () => {
+export const BookingForm = ({
+  onSubmit
+}: {
+  onSubmit: (values: FormValues) => void
+}) => {
   const router = useRouter()
 
   const form = useForm<FormValues>({
@@ -61,11 +57,6 @@ export const BookingForm = () => {
       hasChildren: false
     }
   })
-
-  const onSubmit = (values: FormValues) => {
-    console.log('Форма отправлена:', values)
-    router.push('/booking-confirmation')
-  }
 
   return (
     <Form {...form}>
@@ -172,8 +163,8 @@ export const BookingForm = () => {
             )}
           />
         </div>
-        <div className="max-w-1/2 pt-6 flex justify-center items-center gap-3">
-          <Button type="submit" variant='outline' className="w-full">
+        <div className="flex max-w-1/2 items-center justify-center gap-3 pt-6">
+          <Button type="submit" variant="outline" className="w-full">
             Добавить человека
           </Button>
           <Button type="submit" className="w-full">
