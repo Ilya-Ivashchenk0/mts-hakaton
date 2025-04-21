@@ -6,9 +6,8 @@ import { redirect } from 'next/navigation'
 const Rooms = async ({ searchParams }: { searchParams: Promise<any> }) => {
   try {
     const { address, from, to, guests } = await searchParams
-    console.log(address, from, to, guests)
 
-    const endpoint = endpoints.cms.pages.getAllRooms()
+    const endpoint = endpoints.cms.getAllRooms()
 
     const res = await fetch(endpoint.url, endpoint.options)
 

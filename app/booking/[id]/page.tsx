@@ -6,7 +6,7 @@ import { redirect } from 'next/navigation'
 const Booking = async ({ params }: { params: Promise<any> }) => {
   try {
     const { id } = await params
-    const endpoint = endpoints.cms.pages.getOneRoom(id)
+    const endpoint = endpoints.cms.getOneRoom(id)
     const res = await fetch(endpoint.url, endpoint.options)
     if (!res.ok) throw new Error('Failed to fetch room')
     const data = await res

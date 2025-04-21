@@ -87,6 +87,7 @@ export const RoomCard = ({
   room: Room
   mode?: 'vertical' | 'horizontal'
 }) => {
+  console.log(room)
   return (
     <Card className={roomCardVariants({ mode })}>
       <CardHeader className={imageVariants({ mode })}>
@@ -114,7 +115,7 @@ export const RoomCard = ({
               'pb-5': mode === 'vertical'
             })}
           >
-            <CardAction>{room.fields['Цена за сутки']} ₽</CardAction>
+            <CardAction>{room.fields['Стоимость']} ₽</CardAction>
             {mode === 'horizontal' && <ComfortIcons />}
           </div>
           {mode === 'horizontal' && (

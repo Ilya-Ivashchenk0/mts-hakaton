@@ -7,20 +7,6 @@ const baseHeaders = {
 export const endpoints = {
   cms: {
     pages: {
-      getAllRooms: () => ({
-        url: `${process.env.MTS_TABS_BASE_URL}/fusion/v1/datasheets/dst8K6blcFxhDBFbyR/records?viewId=viw03fKkgPvV1&fieldKey=name`,
-        options: {
-          method: 'GET',
-          headers: baseHeaders
-        }
-      }),
-      getOneRoom: (id: string) => ({
-        url: `${process.env.MTS_TABS_BASE_URL}/fusion/v1/datasheets/dst8K6blcFxhDBFbyR/records?viewId=viw03fKkgPvV1&fieldKey=name`,
-        options: {
-          method: 'GET',
-          headers: baseHeaders
-        }
-      }),
       home: () => ({
         url: `${process.env.MTS_TABS_BASE_URL}/fusion/v1/datasheets/dstkjeGa6o5leXtX0V/records?viewId=viw1WrNqtj0eD&fieldKey=name`,
         options: {
@@ -38,6 +24,20 @@ export const endpoints = {
         }
       })
     },
+    getAllRooms: () => ({
+      url: `${process.env.MTS_TABS_BASE_URL}/fusion/v1/datasheets/dst8K6blcFxhDBFbyR/records?viewId=viw03fKkgPvV1&fieldKey=name`,
+      options: {
+        method: 'GET',
+        headers: baseHeaders
+      }
+    }),
+    getOneRoom: (id: string) => ({
+      url: `${process.env.MTS_TABS_BASE_URL}/fusion/v1/datasheets/dst8K6blcFxhDBFbyR/records?viewId=viw03fKkgPvV1&fieldKey=name`,
+      options: {
+        method: 'GET',
+        headers: baseHeaders
+      }
+    }),
     getImage: (url: string) => ({
       url: url,
       options: {
@@ -46,7 +46,7 @@ export const endpoints = {
       }
     }),
     submitOrder: (data: { room: Room; user: FormValues }) => ({
-      url: `https://tabs-templates.ru/webhook-test/order`,
+      url: `https://tabs-templates.ru/webhook/order`,
       options: {
         method: 'POST',
         headers: baseHeaders,
