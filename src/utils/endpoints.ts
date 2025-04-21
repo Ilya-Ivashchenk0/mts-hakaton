@@ -25,14 +25,14 @@ export const endpoints = {
       })
     },
     getAllRooms: () => ({
-      url: `${process.env.MTS_TABS_BASE_URL}/fusion/v1/datasheets/dst8K6blcFxhDBFbyR/records?viewId=viw03fKkgPvV1&fieldKey=name`,
+      url: `${process.env.MTS_TABS_BASE_URL}/fusion/v1/datasheets/dsttxwkr4uu9ZH7ADF/records?viewId=viwUpPhmSxysX&fieldKey=name`,
       options: {
         method: 'GET',
         headers: baseHeaders
       }
     }),
     getOneRoom: (id: string) => ({
-      url: `${process.env.MTS_TABS_BASE_URL}/fusion/v1/datasheets/dst8K6blcFxhDBFbyR/records?viewId=viw03fKkgPvV1&fieldKey=name`,
+      url: `${process.env.MTS_TABS_BASE_URL}/fusion/v1/datasheets/dsttxwkr4uu9ZH7ADF/records?recordIds[]=${id}`,
       options: {
         method: 'GET',
         headers: baseHeaders

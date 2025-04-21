@@ -18,6 +18,7 @@ const Booking = async ({ params }: { params: Promise<any> }) => {
       })
 
     const room = data.find((i: Room) => i.recordId === id)
+    console.log(room)
 
     if (!room) {
       redirect('/not-found')

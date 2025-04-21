@@ -21,7 +21,6 @@ import {
 } from '@/shared/ui/select'
 import { Checkbox } from '@/shared/ui/checkbox'
 import { Button } from '@/shared/ui/button'
-import { useRouter } from 'next/navigation'
 import { FormValues } from '@/src'
 
 const formSchema = z.object({
@@ -44,8 +43,6 @@ export const BookingForm = ({
 }: {
   onSubmit: (values: FormValues) => void
 }) => {
-  const router = useRouter()
-
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {

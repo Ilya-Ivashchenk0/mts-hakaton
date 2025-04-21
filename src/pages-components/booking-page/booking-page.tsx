@@ -13,8 +13,13 @@ export const BookingPage = ({ room }: { room: Room }) => {
     try {
       const endpoint = endpoints.cms.submitOrder({ room: room, user: values })
       const res = await fetch(endpoint.url, endpoint.options)
+      console.log(res)
 
       if (!res.ok) throw new Error('Failed to submit order')
+
+      const data = await res.json()
+
+      console.log(data)
 
       router.push('/booking-confirmation')
     } catch (err) {
