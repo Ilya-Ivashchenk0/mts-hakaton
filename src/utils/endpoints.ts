@@ -49,8 +49,14 @@ export const endpoints = {
       url: `https://tabs-templates.ru/webhook/order`,
       options: {
         method: 'POST',
-        headers: baseHeaders,
         body: JSON.stringify(data)
+      }
+    }),
+    submitCleaningOrder: (phone: string) => ({
+      url: `https://tabs-templates.ru/webhook/clining-confirmation`,
+      options: {
+        method: 'POST',
+        body: JSON.stringify({ phone })
       }
     })
   }
